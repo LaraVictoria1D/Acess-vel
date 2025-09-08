@@ -1,37 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;700;1,400;1,700&display=swap');
 
 :root {
-    --laranja-claro: #FF862A;
+    --laranja-claro: #E67E22;         /* tom de laranja um pouco mais suave */
+    --laranja-escuro: #D35400;        /* tom laranja escuro para destaque */
+    --fundo-claro: #F9F9F9;           /* fundo quase branco, mais suave */
+    --texto-escuro: #2C3E50;          /* azul marinho escuro para texto principal */
+    --texto-secundario: #7F8C8D;      /* cinza azulado para textos menos importantes */
+    --link-color: #D35400;            /* link com laranja escuro */
     --alto-contraste-fundo: #000000;
     --alto-contraste-texto: #ffffff;
-    --alto-contraste-link: #ffd700;
+    --alto-contraste-link: #FFD700;
 }
 
 body {
     font-size: 1rem;
-    font-family: 'Montserrat';
+    font-family: 'Roboto', sans-serif;
+    color: var(--texto-escuro);
+    background-color: var(--fundo-claro);
+    margin: 0;
 }
 
 header {
     background-color: #ffffff;
 }
 
-
 section {
     padding-bottom: 5rem;
 }
 
-
 .nav-link {
-    color: #CB6D43;
-    font-weight: 600;
+    color: var(--link-color);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.nav-link:hover {
+    color: var(--laranja-escuro);
 }
 
 .inicio-fundo {
-    /* aula 3 */
     background-image: url('img/4965007.jpg');
-    /* Substitua pelo caminho da sua imagem */
     background-size: cover;
     background-position: right;
     border-radius: 80px;
@@ -39,9 +48,11 @@ section {
     height: 606px;
     padding: 40px;
     margin: 0 auto;
+    position: relative;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
 
-/* posicionamento para a imagem à direita */
 .img-inicio {
     position: absolute;
     right: 0;
@@ -50,14 +61,12 @@ section {
     height: auto;
 }
 
-
 .esquerda-conteudo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
 }
-
 
 .botao-inicio {
     background-color: var(--laranja-claro);
@@ -66,13 +75,21 @@ section {
     width: 14em;
     height: 3em;
     align-content: center;
-
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.botao-inicio:hover {
+    background-color: var(--laranja-escuro);
 }
 
 .display-4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 3.5rem;
     text-shadow: -5px 5px var(--laranja-claro);
 }
-
 
 #tropicalia {
     position: relative;
@@ -82,7 +99,6 @@ section {
     background: url('img/flor.png') top right no-repeat,
         url('img/flor-esquerda.png') bottom left no-repeat;
     background-size: 180px 180px;
-    /* Ajuste o tamanho conforme necessário */
 }
 
 #tropicalia .container {
@@ -91,20 +107,18 @@ section {
     justify-content: center;
     position: relative;
     z-index: 1;
-    /* Garante que o conteúdo fica acima das imagens do background */
 }
 
-
 h2 {
-    font-family: 'Lemon', serif;
+    font-family: 'Playfair Display', serif;
     font-size: 2.5em;
     font-style: normal;
     color: var(--laranja-claro);
+    margin-bottom: 1rem;
 }
 
 #galeria {
-    background-color: #FAF4F4;
-
+    background-color: var(--fundo-claro);
 }
 
 .fundo-galeria {
@@ -116,30 +130,42 @@ h2 {
     background-image: url('img/4965007.jpg');
     background-size: cover;
     padding: 4rem 0;
-    /* Espaçamento interno para a seção de contato */
-
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
 
 .formulario {
     background-color: #ffffff;
     padding: 2rem;
-    /* Espaçamento interno dentro do formulário */
     border-radius: 10px;
-    /* Borda arredondada para o formulário */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Sombra suave para destacar o formulário */
     font-weight: bold;
+    color: var(--texto-escuro);
 }
 
 .formulario button {
-    background-color: #CB6D43;
+    background-color: var(--laranja-escuro);
     border: none;
     font-weight: bold;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.formulario button:hover {
+    background-color: var(--laranja-claro);
 }
 
 .form-control {
     background-color: #F1EDEF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: var(--texto-escuro);
 }
+
 .menu-acessibilidade{
     position: fixed;
     top:2rem;
@@ -161,6 +187,7 @@ h2 {
 .opcoes-acessibilidade button{
     margin-bottom: 5px;
 }
+
 .apresenta-lista{
     display: none;
 }
